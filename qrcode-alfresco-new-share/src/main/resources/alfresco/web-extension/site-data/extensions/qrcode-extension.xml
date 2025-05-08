@@ -1,0 +1,40 @@
+<extension>
+    <modules>
+        <module>
+            <id>QR Code Document Action</id>
+            <version>1.0</version>
+            <auto-deploy>true</auto-deploy>
+            <configurations>
+                <config evaluator="string-compare" condition="DocLibActions">
+                    <actions>
+                        <action id="document-barcodeQRCodePdf"
+                                icon="document-barcodeQRCodePdf-16"
+                                type="javascript"
+                                label="CODIGO QR PDF">
+                            <param name="function">onActionSimpleRepoAction</param>
+                            <param name="action">barcodeQRCodePdf</param>
+                            <param name="successMessage">alfresco.doclib.action.barcodeQRCodePdf.msg.success</param>
+                            <param name="failureMessage">alfresco.doclib.action.barcodeQRCodePdf.msg.failure</param>
+                            <evaluator>checkPDFFileType</evaluator>
+                        </action>
+                    </actions>
+                </config>
+                <config evaluator="string-compare" condition="DocLibActions">
+                    <actionGroups>
+                        <actionGroup id="document-browse">
+                            <action index="400" id="document-barcodeQRCodePdf" />
+                        </actionGroup>
+                        <actionGroup id="document-details">
+                            <action index="400" id="document-barcodeQRCodePdf" />
+                        </actionGroup>
+                    </actionGroups>
+                </config>
+                <config evaluator="string-compare" condition="DocLibCustom">
+                    <dependencies>
+                        <js src="js/evaluators/qrcode-pdf-evaluator.min.js" />
+                    </dependencies>
+                </config>
+            </configurations>
+        </module>
+    </modules>
+</extension>

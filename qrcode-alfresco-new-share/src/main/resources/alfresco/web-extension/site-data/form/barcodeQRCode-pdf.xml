@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<form>
+    <id>barcodeQRCodePdf</id>
+    <description>Form for selecting the page number to place the QR code</description>
+    <submitUrl>/api/actionQueue</submitUrl>
+    <formId>barcodeQRCodePdf</formId>
+    <showCaption>true</showCaption>
+    <showCancelButton>true</showCancelButton>
+    <mode>create</mode>
+    <fields>
+        <field id="action">
+            <control template="/org/alfresco/components/form/controls/hidden.ftl" />
+            <value>barcodeQRCodePdf</value>
+        </field>
+        <field id="destination">
+            <control template="/org/alfresco/components/form/controls/hidden.ftl" />
+        </field>
+        <field id="page-no">
+            <label>alfresco.doclib.action.barcodeQRCodePdf.form.field.pageNo</label>
+            <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+        </field>
+    </fields>
+</form>
